@@ -1,0 +1,65 @@
+[core]
+	quotepath = false
+  editor = vim
+  excludesfile = /Users/pascal/.gitignore_global
+	autocrlf = input
+[user]
+  name = Pascal Hertleif
+  email = killercup@gmail.com
+  signingkey = 2047A074
+[github]
+  user = killercup
+[color]
+  ui = 1
+[diff]
+  # Detect copies as well as renames
+  renames = copies
+  algorithm = patience
+  compactionHeuristic = true
+[merge]
+  # Include summaries of merged commits in newly created merge commit messages
+  log = true
+[rerere]
+	enabled = true
+[alias]
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  co = checkout
+  nb = checkout -b # create and switch to a new branch
+  c = commit
+  g = grep --break --heading --line-number
+  dsf = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy  | less --tabs=4 -RFX; }; f"
+  timesheet = "!f() { git log --since=\"${1-last week}\" --date=short --pretty=\"%ad (%ar) -- %s\" --author=\"$(git config --get user.name)\"; }; f"
+  pr = "!bash -c 'if [ -z \"$*\" ]; then echo \"git pr <pr-number> [<branch>]\"; exit 1; fi; git fetch origin pull/$1/head:${2:-pr$1}; git checkout ${2:-pr$1};' -"
+[help]
+  autocorrect = 1
+[push]
+  default = simple
+[grep]
+  lineNumber = true
+[filter "media"]
+  required = true
+  clean = git media clean %f
+  smudge = git media smudge %f
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+  required = true
+	process = git-lfs filter-process
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "diff-highlight"]
+  oldNormal = "red bold"
+  oldHighlight = "red bold 52"
+  newNormal = "green bold"
+  newHighlight = "green bold 22"
+[commit]
+  gpgsign = true
+[http]
+	sslVerify = true
+[fetch]
+	prune = false
+[protocol]
+	version = 2
