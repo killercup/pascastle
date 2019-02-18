@@ -63,3 +63,7 @@
 	prune = false
 [protocol]
 	version = 2
+
+[includeIf "gitdir:~/Projekte/TC/"]
+    path = .gitconfig-tc
+
