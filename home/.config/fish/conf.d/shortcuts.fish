@@ -17,7 +17,6 @@ abbr -a fuckthefinder 'sudo killall -KILL appleeventsd'
 abbr -a fuckdns 'sudo killall -HUP mDNSResponder'
 
 alias s 'open this.sublime-project > /dev/null; or subl .; gitup'
-alias code 'code-insiders'
 abbr -a e 'code-insiders .'
 abbr -a clion 'open . -a /Applications/Clion.app'
 abbr -a v 'vim'
