@@ -37,6 +37,7 @@ abbr -a master 'git checkout master'
 abbr -a mastr 'git checkout master'
 abbr -a mater 'git checkout master'
 abbr -a hc 'hub clone'
+abbr -a gh 'hub browse'
 
 abbr -a phps 'php -S 0.0.0.0:8080'
 abbr -a nr 'npm run'

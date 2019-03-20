@@ -9,6 +9,8 @@
   signingkey = 2047A074
 [github]
   user = killercup
+[hub]
+  protocol = ssh
 [color]
   ui = 1
 [diff]
