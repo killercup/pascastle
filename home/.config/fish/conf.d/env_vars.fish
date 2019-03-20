@@ -10,6 +10,7 @@ set -x PATH $PATH /usr/local/sbin
 # Package Managers
 set -x PATH $PATH $JAVA_HOME/bin
 set -x PATH $PATH $HOME/.cargo/bin
+set -x CARGO_TARGET_DIR $HOME/.cargo/global-target
 
 # Add _current_ folder's node modules
 set -x PATH $PATH ./node_modules/.bin
