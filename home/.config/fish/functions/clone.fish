@@ -1,5 +1,5 @@
 function clone --description "checkout a github repo" --argument url
-    set -l match (string match -r '^(https://github.com/|git@github.com:)(\w+)/(\w+)/?(.*)' $url)
+    set -l match (string match -r '^(https://github.com/|git@github.com:)([\w\-_]+)/([\w_\-]+)(/.*|.git)?$' $url)
     if test -z "$match"
         echo 'cannot parse URL $url'
         return 1
@@ -17,6 +17,6 @@ function clone --description "checkout a github repo" --argument url
         cd $repo_dir
         return 1
     end
-    git clone $url $repo
+    git clone "git@github.com:$user/$repo.git" $repo
     cd $repo
 end
